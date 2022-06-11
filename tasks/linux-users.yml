@@ -1,0 +1,20 @@
+###############################################################################
+# Create users with ssh keys
+###############################################################################
+
+- name: "Add linux user {{ item.user }}"
+  user:
+    name: "{{ item.user }}"
+    shell: /bin/bash
+    groups: sudo
+    append: yes
+  become: yes
+
+- name: "Set authorized key for user {{ item.user }}"
+  authorized_key:
+    user: "{{ item.user }}"
+    state: present
+    key: "{{ item.ssh_key }}"
+    # Delete other keys if present
+    exclusive: yes                       
+  become: yes
