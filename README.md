@@ -15,7 +15,7 @@ Create requirements.yml file
 Install external module into ~/.ansible/roles folder
 
 ```
-ansible-galaxy install -r requirements.yml --force
+ansible-galaxy install -r requirements.yml
 ```
 
 ## Usage
@@ -24,9 +24,9 @@ playbook.yml:
 
 ```
 # Configure users
-- role: "ansible-ubuntu-users"
+- role: "ubuntu-users"
     vars:
-    linux_users:
-      - { user: "user1", ssh_key: "ssh-rsa AAAAB3NzaC1yc2E...." }
-      - { user: "user2", ssh_key: "ssh-rsa AAAAB3NzaC1yc2E...." }
+      linux_users:
+        - { user: "user1", ssh_key: "ssh-rsa AAAAB3NzaC1yc2E...." }
+        - { user: "user2", ssh_key: "ssh-rsa AAAAB3NzaC1yc2E...." }
 ```        
