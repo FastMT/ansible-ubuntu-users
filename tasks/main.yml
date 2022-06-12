@@ -2,10 +2,6 @@
 # Create users with ssh keys
 ###############################################################################
 
-#- name: Print variables
-#  debug:
-#    var: linux_users
-
 - name: Create local linux users with ssh keys
   include_tasks: linux-users.yml
   with_items: "{{ linux_users }}"
