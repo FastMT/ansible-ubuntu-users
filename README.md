@@ -7,7 +7,7 @@ Create requirements.yml file
 
 ```
 # Include ubuntu-users role
-- src: https://github.com/aytugan/ansible-ubuntu-users.git
+- src: https://github.com/FastMT/ansible-ubuntu-users.git
   name: ubuntu-users
   version: "v1.0.2"
 ```
